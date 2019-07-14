@@ -1,4 +1,4 @@
-# Lab 3: Configuring Spring with Annotations and Component Scanning
+# Lab 4: Configuring Spring with Annotations and Component Scanning
 
 In this lab you will get hands on practice configuring the Spring IOC container using annotations and component scanning.
 
