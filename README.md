@@ -1,6 +1,6 @@
-# Lab 4: Configuring Spring with Annotations and Component Scanning
+# Lab 4: Using Spring Boot Externalizing Application Configuration
 
-In this lab you will get hands on practice configuring the Spring IOC container using annotations and component scanning.
+In this lab, you will learn how to externalize properties in a Spring Boot application.
 
 ## Getting Started
 
