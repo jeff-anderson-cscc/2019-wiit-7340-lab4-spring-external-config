@@ -25,18 +25,27 @@ public class SpringAppTests {
     @Autowired
     private ApplicationContext applicationContext;
 
-    @Test
-    public void contextLoadsAndIsProperlyDecorated_Test () {
-        assertNotNull(applicationContext.getBean("springApp").getClass().
-                getAnnotation(org.springframework.boot.autoconfigure.SpringBootApplication.class));
-    }
-
     /* ----- uncomment one test at a time and add just enough code to make it pass -----
 
     @Test
-    public void componentLoads_Test () {
-        assertNotNull(applicationContext.getBean("someComponent"));
+    public void contextLoadsAndIsProperlyDecorated_Test () {
+        assertNotNull(applicationContext.getBean("springApp").getClass().
+          getAnnotation(org.springframework.boot.autoconfigure.SpringBootApplication.class));
     }
+
+
+    @Test
+    public void someComponentClassExists_Test () throws Exception {
+        assertNotNull(Class.forName("edu.cscc.java4.sbootlab.SomeComponent").newInstance());
+    }
+
+
+    @Test
+    public void someComponentClassConfiguredAndCanBeLoaded_Test () {
+        assertNotNull(applicationContext.getBean("someComponent").getClass().
+          getAnnotation(org.springframework.stereotype.Component.class));
+    }
+
 
     @Test
     public void someComponentHasSomeProperty_Test () throws Exception {
@@ -45,11 +54,13 @@ public class SpringAppTests {
         assertNotNull(someComponent.getClass().getMethod("getSomeProperty", paramList));
     }
 
+
     @Test
     public void applicationPropertiesFileExists_Test () throws Exception {
         Resource applicationProperties = new ClassPathResource("/application.properties");
         Properties props = PropertiesLoaderUtils.loadProperties(applicationProperties);
     }
+
 
     @Test
     public void applicationPropertiesHasSomecomponentProperty_Test () throws Exception {
@@ -57,6 +68,7 @@ public class SpringAppTests {
         Properties props = PropertiesLoaderUtils.loadProperties(applicationProperties);
         assertEquals("defaultProfile",props.getProperty("edu.cscc.java4.sbootlab.SomeComponent.someProperty"));
     }
+
 
     @Test
     public void someComponentSetSomePropertyProperlyDecorated_Test () throws Exception {
@@ -75,6 +87,7 @@ public class SpringAppTests {
         assertNotNull(Class.forName("edu.cscc.java4.sbootlab.SomeConfigProperties").newInstance());
     }
 
+
     @Test
     public void configurationPropertiesClassProperlyDecorated_Test () {
         SomeConfigProperties someConfigProperties = applicationContext.getBean(edu.cscc.java4.sbootlab.SomeConfigProperties.class);
@@ -84,6 +97,7 @@ public class SpringAppTests {
         assertNotNull(configPropsAnnotation);
         assertThat(configPropsAnnotation.toString(), CoreMatchers.containsString("edu.cscc.java4.sbootlab.config"));
     }
+
 
     @Test
     public void configurationPropertiesClassPullsPropsFromExternalConfig_Test () throws Exception {
@@ -102,6 +116,6 @@ public class SpringAppTests {
         assertEquals("You always pass failure on the way to success -- Mickey Rooney",someConfigProperties.getMessageOfTheDay());
     }
 
-     */
+   */
 
 }
