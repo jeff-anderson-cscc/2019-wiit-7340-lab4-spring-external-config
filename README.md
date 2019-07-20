@@ -1,6 +1,6 @@
-# Lab 4: Using Spring Boot Externalizing Application Configuration
+# Lab 4: Using Spring Boot and Externalizing Application Configuration
 
-In this lab, you will learn how to externalize properties in a Spring Boot application.
+In this lab, you will learn how to create Spring Boot applications and externalize properties in your application.
 
 ## Getting Started
 
